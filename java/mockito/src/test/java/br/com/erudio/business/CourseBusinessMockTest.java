@@ -9,11 +9,11 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import br.com.erudio.service.CourserService;
+import br.com.erudio.service.CourseService;
 
 public class CourseBusinessMockTest {
 
-    CourserService mockService;
+    CourseService mockService;
     CourseBusiness business;
     List<String> courses;
 
@@ -22,7 +22,7 @@ public class CourseBusinessMockTest {
         // Give / Arrange
 
         // Método mock do mockito -> utilizamos mock do mockito para simular a classe, não acessando diretamente ela
-        mockService = mock(CourserService.class);
+        mockService = mock(CourseService.class);
         business = new CourseBusiness(mockService);
 
         courses = Arrays.asList(

@@ -3,10 +3,10 @@ package br.com.erudio.stubs;
 import java.util.Arrays;
 import java.util.List;
 
-import br.com.erudio.service.CourserService;
+import br.com.erudio.service.CourseService;
 
 // Stub -> Classe que implementa a mesma interface do service real, mas é usada para mocks em testes
-public class CourseServiceStub implements CourserService {
+public class CourseServiceStub implements CourseService {
 
     @Override
     public List<String> retrieveCourses(String student) {
@@ -28,5 +28,10 @@ public class CourseServiceStub implements CourserService {
     @Override
     public List<String> doSomething(String student) {
         throw new UnsupportedOperationException("Unimplemented method 'doSomething'");
+    }
+
+    @Override
+    public void deleteCourse(String course) {
+        throw new UnsupportedOperationException("Unimplemented method 'deleteCourse'");
     }
 }

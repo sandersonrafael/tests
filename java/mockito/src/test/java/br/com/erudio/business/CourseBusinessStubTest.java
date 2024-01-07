@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import br.com.erudio.service.CourserService;
+import br.com.erudio.service.CourseService;
 import br.com.erudio.stubs.CourseServiceStub;
 
 public class CourseBusinessStubTest {
@@ -14,7 +14,7 @@ public class CourseBusinessStubTest {
     @Test
     void testCoursesRelatedToSpring_When_UsingAStub() {
         // Given / Arrange
-        CourserService stubService = new CourseServiceStub();
+        CourseService stubService = new CourseServiceStub();
         CourseBusiness business = new CourseBusiness(stubService);
 
         /* Case 1 */
