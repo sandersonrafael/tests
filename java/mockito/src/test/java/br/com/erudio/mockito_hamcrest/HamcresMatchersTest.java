@@ -1,4 +1,4 @@
-package br.com.erudio.mockito;
+package br.com.erudio.mockito_hamcrest;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -25,5 +25,12 @@ public class HamcresMatchersTest {
 
         // Check Strings
         assertThat("", is(emptyString())); // se é, uma String vazia
+        assertThat(null, is(emptyOrNullString())); // se é string vazia ou nulo
+
+        // Check Arrays
+        Integer[] myArray = { 1, 2, 3 };
+        assertThat(myArray, arrayWithSize(3)); // tamanho do array
+        assertThat(myArray, arrayContaining(1, 2, 3)); // contem tais itens (todos e na ordem)
+        assertThat(myArray, arrayContainingInAnyOrder(3, 1, 2)); // todos em qualquer ordem
     }
 }
