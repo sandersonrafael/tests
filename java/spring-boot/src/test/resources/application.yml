@@ -1,6 +1,19 @@
+# spring:
+#   datasource:
+#     driver-class-name: org.h2.Driver
+#     url: jdbc:h2:~/testdb;DB_CLOSE_ON_EXIT_=FALSE
+#     username: sa
+#     password:
+
+# Em testes
+server:
+  port: 8888
 spring:
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:~/testdb;DB_CLOSE_ON_EXIT_=FALSE
-    username: sa
-    password:
+    driver-class-name: com.mysql.jdbc.Driver
+    # Para o testcontainers, não é necessário configurar url, user e password
+    # O testcontainers seta isso dinamicamente através do informado na classe AbstractIntegrationTest
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false

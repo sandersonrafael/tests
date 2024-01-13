@@ -130,7 +130,6 @@ public class PersonControllerTest {
             .andDo(print());
     }
 
-
     @Test
     void testGivenUpdatedPerson_whenUpdate_thenReturnUpdatedPersonObject() throws Exception {
         // Given / Arrange
