@@ -23,7 +23,6 @@ public class AbstractIntegrationTest {
             Startables.deepStart(Stream.of(mysql)).join();
         }
 
-        // TODO: Substituir o map por String, String se der erro e adicionar casting de (Map) abaixo
         private static Map<String, Object> createConnectionConfiguration() {
             return Map.of(
                 "spring.datasource.url", mysql.getJdbcUrl(),

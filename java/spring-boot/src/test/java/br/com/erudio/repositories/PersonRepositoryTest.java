@@ -9,12 +9,17 @@ import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+import br.com.erudio.integration.testcontainers.AbstractIntegrationTest;
 import br.com.erudio.model.Person;
 
 @DataJpaTest // Utilizado para que a execução utilize o application.yml de tests em vez do main
-public class PersonRepositoryTest {
+// ao extender AbstractIntegrationTest, passa a ser um teste de integração em vez de unitário
+// necessário também adicionar a seguinte configuração com annotation:
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+public class PersonRepositoryTest extends AbstractIntegrationTest {
 
     @Autowired
     private PersonRepository repository;
